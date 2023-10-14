@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.HomepageController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="965.0">
+               <children>
+                  <ImageView fitHeight="643.0" fitWidth="984.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/backgroungImg.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane opacity="0.24" prefHeight="643.0" prefWidth="965.0" style="-fx-background-color: #A67700;" />
+                  <AnchorPane layoutX="291.0" layoutY="93.0" opacity="0.47" prefHeight="160.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+                  <Label layoutX="319.0" layoutY="110.0" text="Orders" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="288.0" layoutY="537.0" prefHeight="18.0" prefWidth="116.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <AnchorPane layoutX="628.0" layoutY="95.0" opacity="0.47" prefHeight="160.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+                  <AnchorPane layoutX="794.0" layoutY="96.0" opacity="0.47" prefHeight="160.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+                  <AnchorPane layoutX="460.0" layoutY="95.0" opacity="0.47" prefHeight="160.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+                  <Label layoutX="473.0" layoutY="110.0" text="Employers" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="831.0" layoutY="108.0" text="Items" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="645.0" layoutY="110.0" text="Suppliers" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="346.0" layoutY="160.0" text="50" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="513.0" layoutY="160.0" text="50" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="683.0" layoutY="158.0" text="50" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="846.0" layoutY="159.0" text="50" textFill="WHITE">
+                     <font>
+                        <Font name="Perpetua Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="643.0" prefWidth="254.0" style="-fx-background-color: A67700;" />
+            <Label layoutX="288.0" layoutY="9.0" prefHeight="50.0" prefWidth="152.0" text="11:11:11" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="294.0" layoutY="50.0" prefHeight="26.0" prefWidth="102.0" text="10/11/2023" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="18.0" layoutY="97.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Orders" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="18.0" layoutY="168.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Items" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="19.0" layoutY="241.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Employers" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="19.0" layoutY="313.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Suppliers" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="19.0" layoutY="384.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Oder Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="18.0" layoutY="455.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Sales Returns" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="17.0" layoutY="526.0" opacity="0.6" prefHeight="43.0" prefWidth="219.0" style="-fx-background-color: black;" text="Sales Reports" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="107.61" radius="65.5875" width="156.74" />
+               </effect>
+            </JFXButton>
+            <Label layoutX="24.0" layoutY="26.0" prefHeight="44.0" prefWidth="219.0" text="Clothify Store" textFill="WHITE">
+               <font>
+                  <Font name="Script MT Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="28.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/checkout.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="31.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/casual-t-shirt-.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="29.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/employee.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="31.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/supplier.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="32.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/checklist.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="26.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/sales.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="25.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/sales%20(1).png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="501.0" layoutY="538.0" prefHeight="27.0" prefWidth="291.0" style="-fx-background-color: white;" />
+            <AnchorPane layoutX="508.0" layoutY="541.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: red; -fx-background-radius: 100;" />
+            <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="295.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/turn-off.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="579.0" layoutY="541.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: FF9900; -fx-background-radius: 100;" />
+            <AnchorPane layoutX="712.0" layoutY="541.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #107100; -fx-background-radius: 100;" />
+            <Label layoutX="531.0" layoutY="540.0" text="Gents">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="652.0" layoutY="541.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #0085FF; -fx-background-radius: 100;" />
+            <Label layoutX="601.0" layoutY="541.0" text="Ladies">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="675.0" layoutY="541.0" text="Kids">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="736.0" layoutY="541.0" text="Others">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
