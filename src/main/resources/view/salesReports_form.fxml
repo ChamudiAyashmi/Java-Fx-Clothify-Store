@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.SalesReportsFormController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                     <children>
+                        <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                           <children>
+                              <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="965.0">
+                                       <children>
+                                          <ImageView fitHeight="643.0" fitWidth="984.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/backgroungImg.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <AnchorPane opacity="0.24" prefHeight="643.0" prefWidth="965.0" style="-fx-background-color: #A67700;" />
+                                          <AnchorPane layoutX="-1.0" opacity="0.47" prefHeight="643.0" prefWidth="966.0" style="-fx-background-color: black;" />
+                                       </children>
+                                    </AnchorPane>
+                                    <JFXButton layoutX="768.0" layoutY="35.0" onAction="#btnDailyReportsOnAction" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #FFB800;" text="Get Daily Report">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton layoutX="20.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/next%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton layoutX="769.0" layoutY="76.0" onAction="#btnMonthlyReportsOnAction" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #FFB800;" text="Get Monthly Report">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <Label layoutX="29.0" layoutY="95.0" text="Profit :" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="126.0" text="Sales Count :" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="156.0" text="Sales  :" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton layoutX="769.0" layoutY="118.0" onAction="#btnAnnulaReportOnAction" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #FFB800;" text="Get Annual Report">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton layoutX="769.0" layoutY="158.0" onAction="#btnDailyReturnsOnAction" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #FFB800;" text="Daily Returns">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <Label layoutX="448.0" layoutY="206.0" text="Sales Chart" textFill="WHITE">
+                                       <font>
+                                          <Font name="Perpetua Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <JFXComboBox fx:id="cmbDateTime" focusColor="WHITE" layoutX="29.0" layoutY="54.0" prefHeight="26.0" prefWidth="156.0" promptText="Today" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+      <Separator layoutX="31.0" layoutY="204.0" prefHeight="0.0" prefWidth="903.0" />
+   </children>
+</AnchorPane>

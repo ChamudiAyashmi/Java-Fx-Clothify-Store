@@ -12,6 +12,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginFormController">
    <children>
+      <JFXButton layoutX="316.0" layoutY="375.0" onAction="#btnSignInOnAction" prefHeight="39.0" prefWidth="208.0" text="Foggotton Password?" textFill="#ffb800">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </JFXButton>
       <ImageView fitHeight="643.0" fitWidth="984.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/backgroungImg.jpg" />
@@ -39,11 +44,6 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="332.0" layoutY="381.0" text="Foggotton Password?" textFill="#ffb800">
-         <font>
-            <Font name="Perpetua Bold" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="546.0" layoutY="381.0" text="Show Password" textFill="WHITE">
          <font>
             <Font name="Perpetua Bold" size="20.0" />
@@ -75,5 +75,10 @@
             <Image url="@../assets/user.png" />
          </image>
       </ImageView>
+      <JFXButton layoutX="320.0" layoutY="374.0" onAction="#btnForgotPasswordOnAction" prefHeight="39.0" prefWidth="208.0" text="Forgotten Password ?" textFill="#ffb800">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

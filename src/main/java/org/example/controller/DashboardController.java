@@ -15,6 +15,8 @@ public class DashboardController {
     public Label lblItemCount;
     public Label lblSuppliersCount;
     public Label lblEmployersCount;
+    public Label lblTime;
+    public Label lblDate;
     private Stage stage;
     public void btnOrdersOnAction(ActionEvent actionEvent) throws IOException {
         stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -25,36 +27,35 @@ public class DashboardController {
         stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/item_form.fxml"))));
         stage.show();
-
     }
-
-    public void btnEmployersOnAction(ActionEvent actionEvent) {
-
+    public void btnEmployersOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employer_form.fxml"))));
+        stage.show();
     }
-
     public void btnSuppliersOnAction(ActionEvent actionEvent) throws IOException {
         stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/supplier_form.fxml"))));
         stage.show();
-
     }
-
-    public void btnOrderDetailsOnAction(ActionEvent actionEvent) {
-
+    public void btnOrderDetailsOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/oderDetails_form.fxml"))));
+        stage.show();
     }
-
-    public void btnSalesReturnsOnAction(ActionEvent actionEvent) {
-
+    public void btnSalesReturnsOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/salesReturns_form.fxml"))));
+        stage.show();
     }
-
-    public void btnSalesReportsOnAction(ActionEvent actionEvent) {
-
+    public void btnSalesReportsOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/salesReports_form.fxml"))));
+        stage.show();
     }
-
     public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
         stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
         stage.show();
     }
-
 }

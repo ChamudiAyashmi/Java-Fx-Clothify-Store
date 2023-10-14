@@ -117,12 +117,12 @@
             <Image url="@../assets/sales%20(1).png" />
          </image>
       </ImageView>
-      <Label layoutX="267.0" layoutY="13.0" text="11:11:11" textFill="WHITE">
+      <Label fx:id="lblTime" layoutX="267.0" layoutY="13.0" text="11:11:11" textFill="WHITE">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <Label layoutX="271.0" layoutY="55.0" text="14/09/2023" textFill="WHITE">
+      <Label fx:id="lblDate" layoutX="271.0" layoutY="55.0" text="14/09/2023" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

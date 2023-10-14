@@ -78,7 +78,7 @@
             <Font size="15.0" />
          </font></JFXTextField>
       <CheckBox layoutX="451.0" layoutY="212.0" mnemonicParsing="false" prefHeight="2.0" prefWidth="0.0" />
-      <JFXButton layoutX="668.0" layoutY="210.0" onAction="#btnCheckOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #FFB800;" text="Ckeck">
+      <JFXButton layoutX="668.0" layoutY="210.0" onAction="#btnCheckOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #FFB800;" text="Check">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

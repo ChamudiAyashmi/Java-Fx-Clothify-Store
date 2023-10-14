@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.SalesReturnsFormController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                     <children>
+                        <AnchorPane prefHeight="400.0" prefWidth="600.0">
+                           <children>
+                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="965.0">
+                                 <children>
+                                    <ImageView fitHeight="643.0" fitWidth="984.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/backgroungImg.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane opacity="0.24" prefHeight="643.0" prefWidth="965.0" style="-fx-background-color: #A67700;" />
+                                    <AnchorPane layoutX="-1.0" opacity="0.47" prefHeight="643.0" prefWidth="966.0" style="-fx-background-color: black;" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="678.0" layoutY="27.0" text="Order ID* :" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtQty" focusColor="WHITE" layoutX="70.0" layoutY="46.0" prefHeight="31.0" prefWidth="113.0" promptText="0" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton layoutX="731.0" layoutY="64.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Clear">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/next%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TableView fx:id="tblSalesReturns" layoutX="28.0" layoutY="127.0" opacity="0.73" prefHeight="421.0" prefWidth="902.0">
+                                 <columns>
+                                    <TableColumn prefWidth="83.20001602172852" text="Item Code" />
+                                    <TableColumn prefWidth="93.5999755859375" text="Description" />
+                                    <TableColumn prefWidth="91.19996643066406" text="Qty" />
+                                    <TableColumn prefWidth="91.99993896484375" text="Unit Price" />
+                                    <TableColumn prefWidth="96.0" text="Date" />
+                                    <TableColumn prefWidth="103.199951171875" text="Discount %" />
+                                    <TableColumn prefWidth="86.4000244140625" text="Type" />
+                                    <TableColumn prefWidth="72.80010986328125" text="Size" />
+                                    <TableColumn prefWidth="89.5999755859375" text="Amount" />
+                                    <TableColumn prefWidth="95.199951171875" text="Option" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="24.0" layoutY="60.0" text="Qty*:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtOrderIdSearchbar" focusColor="WHITE" layoutX="766.0" layoutY="11.0" prefHeight="31.0" prefWidth="154.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton layoutX="834.0" layoutY="64.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Update">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <Label layoutX="26.0" layoutY="576.0" text="Total :" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton layoutX="816.0" layoutY="570.0" onAction="#btnPlaceReturnOnAction" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #FF0000;" text="Place Return" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <Label fx:id="lblTotal" layoutX="78.0" layoutY="576.0" text="00.00" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

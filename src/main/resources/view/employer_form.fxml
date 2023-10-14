@@ -44,17 +44,17 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <JFXTextField focusColor="WHITE" layoutX="174.0" layoutY="130.0" prefHeight="31.0" prefWidth="286.0" promptText="National Idetity Number" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtNic" focusColor="WHITE" layoutX="174.0" layoutY="130.0" prefHeight="31.0" prefWidth="286.0" promptText="National Idetity Number" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField focusColor="WHITE" layoutX="174.0" layoutY="170.0" prefHeight="31.0" prefWidth="286.0" promptText="Address" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtAddress" focusColor="WHITE" layoutX="174.0" layoutY="170.0" prefHeight="31.0" prefWidth="286.0" promptText="Address" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField focusColor="WHITE" layoutX="172.0" layoutY="53.0" prefHeight="31.0" prefWidth="286.0" promptText="EMP-0000" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtEmployerId" focusColor="WHITE" layoutX="172.0" layoutY="53.0" prefHeight="31.0" prefWidth="286.0" promptText="EMP-0000" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -84,22 +84,22 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <JFXTextField focusColor="WHITE" layoutX="662.0" layoutY="170.0" prefHeight="31.0" prefWidth="258.0" promptText="Branch" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtBankBranch" focusColor="WHITE" layoutX="662.0" layoutY="170.0" prefHeight="31.0" prefWidth="258.0" promptText="Branch" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton layoutX="618.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Print">
+                  <JFXButton layoutX="618.0" layoutY="233.0" onAction="#btnPrintOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Print">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="725.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Clear">
+                  <JFXButton layoutX="725.0" layoutY="233.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Clear">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="832.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Save">
+                  <JFXButton layoutX="832.0" layoutY="233.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Save">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -113,7 +113,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <TableView layoutX="28.0" layoutY="289.0" opacity="0.73" prefHeight="314.0" prefWidth="913.0">
+                  <TableView fx:id="tblEmployer" layoutX="28.0" layoutY="289.0" opacity="0.73" prefHeight="314.0" prefWidth="913.0">
                     <columns>
                       <TableColumn prefWidth="72.79998397827148" text="ID" />
                       <TableColumn prefWidth="83.99996948242188" text="Title" />
@@ -127,13 +127,13 @@
                         <TableColumn prefWidth="78.39998779296877" text="Option" />
                     </columns>
                   </TableView>
-                  <JFXComboBox focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
-                  <JFXTextField focusColor="WHITE" layoutX="25.0" layoutY="214.0" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXComboBox fx:id="cmbTitle" focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="txtSearchbar" focusColor="WHITE" layoutX="25.0" layoutY="214.0" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField focusColor="WHITE" layoutX="289.0" layoutY="90.0" prefHeight="31.0" prefWidth="170.0" promptText="Name" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtName" focusColor="WHITE" layoutX="289.0" layoutY="90.0" prefHeight="31.0" prefWidth="170.0" promptText="Name" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -142,12 +142,12 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <JFXTextField focusColor="WHITE" layoutX="661.0" layoutY="90.0" prefHeight="31.0" prefWidth="258.0" promptText="Contact" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtContact" focusColor="WHITE" layoutX="661.0" layoutY="90.0" prefHeight="31.0" prefWidth="258.0" promptText="Contact" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="WHITE" layoutX="662.0" layoutY="128.0" prefHeight="31.0" prefWidth="258.0" promptText="XXXXXXXXX" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtBankAccNo" focusColor="WHITE" layoutX="662.0" layoutY="128.0" prefHeight="31.0" prefWidth="258.0" promptText="XXXXXXXXX" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
