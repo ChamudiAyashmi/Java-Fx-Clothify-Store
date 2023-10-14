@@ -151,17 +151,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="337.0" layoutY="200.0" text="50" textFill="WHITE">
+      <Label fx:id="lblOderCount" layoutX="337.0" layoutY="200.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="858.0" layoutY="203.0" text="50" textFill="WHITE">
+      <Label fx:id="lblItemCount" layoutX="858.0" layoutY="203.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="684.0" layoutY="201.0" text="50" textFill="WHITE">
+      <Label fx:id="lblSuppliersCount" layoutX="684.0" layoutY="201.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
@@ -171,7 +171,7 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <Label layoutX="515.0" layoutY="202.0" text="50" textFill="WHITE">
+      <Label fx:id="lblEmployersCount" layoutX="515.0" layoutY="202.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

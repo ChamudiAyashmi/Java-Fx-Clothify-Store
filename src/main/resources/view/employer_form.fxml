@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.EmployerFormController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="965.0">
+                     <children>
+                        <ImageView fitHeight="643.0" fitWidth="984.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/backgroungImg.jpg" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane opacity="0.24" prefHeight="643.0" prefWidth="965.0" style="-fx-background-color: #A67700;" />
+                        <AnchorPane layoutX="-1.0" opacity="0.47" prefHeight="643.0" prefWidth="966.0" style="-fx-background-color: black;" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="22.0" layoutY="64.0" text="Employer ID* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="182.0" text="Address* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="142.0" prefHeight="27.0" prefWidth="169.0" text="NIC* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField focusColor="WHITE" layoutX="174.0" layoutY="130.0" prefHeight="31.0" prefWidth="286.0" promptText="National Idetity Number" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="WHITE" layoutX="174.0" layoutY="170.0" prefHeight="31.0" prefWidth="286.0" promptText="Address" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="WHITE" layoutX="172.0" layoutY="53.0" prefHeight="31.0" prefWidth="286.0" promptText="EMP-0000" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="23.0" layoutY="104.0" text="Name* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="515.0" layoutY="103.0" text="Contact* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="515.0" layoutY="64.0" text="Date Of Birth* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="516.0" layoutY="143.0" text="Bank Account No* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="517.0" layoutY="185.0" text="Bank Branch* :" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField focusColor="WHITE" layoutX="662.0" layoutY="170.0" prefHeight="31.0" prefWidth="258.0" promptText="Branch" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton layoutX="618.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Print">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="725.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Clear">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="832.0" layoutY="233.0" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Save">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="892.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/next%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <TableView layoutX="28.0" layoutY="289.0" opacity="0.73" prefHeight="314.0" prefWidth="913.0">
+                    <columns>
+                      <TableColumn prefWidth="72.79998397827148" text="ID" />
+                      <TableColumn prefWidth="83.99996948242188" text="Title" />
+                        <TableColumn prefWidth="95.19999694824219" text="Name" />
+                        <TableColumn prefWidth="97.60003662109375" text="NIC" />
+                        <TableColumn prefWidth="94.4000244140625" text="DOB" />
+                        <TableColumn prefWidth="96.800048828125" text="Address" />
+                        <TableColumn prefWidth="98.4000244140625" text="Contact" />
+                        <TableColumn prefWidth="99.20001220703125" text="Bank Account No" />
+                        <TableColumn prefWidth="92.0" text="Bank Branch" />
+                        <TableColumn prefWidth="78.39998779296877" text="Option" />
+                    </columns>
+                  </TableView>
+                  <JFXComboBox focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
+                  <JFXTextField focusColor="WHITE" layoutX="25.0" layoutY="214.0" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="WHITE" layoutX="289.0" layoutY="90.0" prefHeight="31.0" prefWidth="170.0" promptText="Name" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <JFXTextField focusColor="WHITE" layoutX="661.0" layoutY="90.0" prefHeight="31.0" prefWidth="258.0" promptText="Contact" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="WHITE" layoutX="662.0" layoutY="128.0" prefHeight="31.0" prefWidth="258.0" promptText="XXXXXXXXX" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <DatePicker layoutX="659.0" layoutY="63.0" promptText="YYYY-MM-DD" />
+   </children>
+</AnchorPane>
