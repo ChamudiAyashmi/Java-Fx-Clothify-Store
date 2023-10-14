@@ -26,7 +26,10 @@ public class LoginFormController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/user_register_form.fxml"))));
         stage.show();
     }
-    public void btnLoginOnAction(ActionEvent actionEvent) {
+    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));
+        stage.show();
 
     }
 }
