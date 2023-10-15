@@ -37,15 +37,6 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </JFXButton>
-                                    <JFXButton layoutX="20.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
-                                       <graphic>
-                                          <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/next%20(1).png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </JFXButton>
                                     <JFXButton layoutX="769.0" layoutY="76.0" onAction="#btnMonthlyReportsOnAction" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #FFB800;" text="Get Monthly Report">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
@@ -92,6 +83,11 @@
          </children>
       </AnchorPane>
       <JFXComboBox fx:id="cmbDateTime" focusColor="WHITE" layoutX="29.0" layoutY="54.0" prefHeight="26.0" prefWidth="156.0" promptText="Today" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
       <Separator layoutX="31.0" layoutY="204.0" prefHeight="0.0" prefWidth="903.0" />
    </children>
 </AnchorPane>

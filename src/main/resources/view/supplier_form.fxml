@@ -116,9 +116,10 @@
             <TableColumn prefWidth="138.4000244140625" text="Qty" />
         </columns>
       </TableView>
-      <JFXButton layoutX="16.0" layoutY="18.0" style="-fx-background-color: black;" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="24.0" layoutY="9.0" onMouseEntered="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

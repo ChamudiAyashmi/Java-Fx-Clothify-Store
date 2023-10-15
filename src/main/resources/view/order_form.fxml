@@ -217,14 +217,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="892.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
-         <graphic>
-            <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/next%20(1).png" />
-               </image>
-            </ImageView>
-         </graphic></JFXButton>
       <TableView layoutX="25.0" layoutY="346.0" opacity="0.73" prefHeight="224.0" prefWidth="923.0">
         <columns>
           <TableColumn prefWidth="104.80002212524414" text="Item Code" />
@@ -279,5 +271,10 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="903.0" layoutY="15.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

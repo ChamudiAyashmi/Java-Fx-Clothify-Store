@@ -3,9 +3,17 @@ package org.example.controller;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class OrderFormController {
+    private Stage stage;
     public Label lblDiscount;
     public JFXTextField txtCustomerContact;
     public JFXTextField txtCustomerEmail;
@@ -43,5 +51,11 @@ public class OrderFormController {
 
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
 
+    }
+
+    public void btnBackToDashboardOnClicked(MouseEvent mouseEvent) throws IOException {
+        stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));
+        stage.show();
     }
 }

@@ -46,15 +46,6 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../assets/next%20(1).png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
                               <TableView fx:id="tblSalesReturns" layoutX="28.0" layoutY="127.0" opacity="0.73" prefHeight="421.0" prefWidth="902.0">
                                  <columns>
                                     <TableColumn prefWidth="83.20001602172852" text="Item Code" />
@@ -107,5 +98,10 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="38.0" fitWidth="42.0" layoutX="24.0" layoutY="8.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

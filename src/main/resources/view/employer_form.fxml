@@ -104,15 +104,6 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="892.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
-                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/next%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
                   <TableView fx:id="tblEmployer" layoutX="28.0" layoutY="289.0" opacity="0.73" prefHeight="314.0" prefWidth="913.0">
                     <columns>
                       <TableColumn prefWidth="72.79998397827148" text="ID" />
@@ -153,5 +144,10 @@
          </font>
       </JFXTextField>
       <DatePicker layoutX="659.0" layoutY="63.0" promptText="YYYY-MM-DD" />
+      <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="886.0" layoutY="16.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

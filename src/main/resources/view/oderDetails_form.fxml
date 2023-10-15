@@ -29,29 +29,20 @@
                               <AnchorPane layoutX="-1.0" opacity="0.47" prefHeight="643.0" prefWidth="966.0" style="-fx-background-color: black;" />
                            </children>
                         </AnchorPane>
-                        <Label layoutX="22.0" layoutY="56.0" text="Order ID* :" textFill="WHITE">
+                        <Label layoutX="27.0" layoutY="56.0" text="Order ID* :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="txtOrderIdSearchbar" focusColor="WHITE" layoutX="107.0" layoutY="42.0" prefHeight="31.0" prefWidth="154.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="txtOrderIdSearchbar" focusColor="WHITE" layoutX="116.0" layoutY="42.0" prefHeight="31.0" prefWidth="154.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton layoutX="832.0" layoutY="20.0" onAction="#btnRefreshOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Refresh">
+                        <JFXButton layoutX="852.0" layoutY="20.0" onAction="#btnRefreshOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Refresh">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
-                        </JFXButton>
-                        <JFXButton layoutX="12.0" layoutY="14.0" prefHeight="40.0" prefWidth="30.0" style="-fx-background-color: none;">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/next%20(1).png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
                         </JFXButton>
                         <TableView fx:id="tblOrder" layoutX="28.0" layoutY="99.0" opacity="0.73" prefHeight="247.0" prefWidth="914.0">
                           <columns>
@@ -84,5 +75,10 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="26.0" layoutY="11.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+         <image>
+            <Image url="@../assets/next%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
