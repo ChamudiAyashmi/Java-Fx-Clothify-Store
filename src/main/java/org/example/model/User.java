@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class User {
-    private String userId;
+    private String id;
     private String email;
     private String password;
-    private String userType;
+    private int user_Type;
 }

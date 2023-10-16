@@ -1,7 +1,12 @@
 package org.example.model;
 
-import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
+import lombok.*;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Supplies {
     private String itemCode;
     private String Description;

@@ -3,10 +3,10 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -104,22 +104,8 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <TableView fx:id="tblEmployer" layoutX="28.0" layoutY="289.0" opacity="0.73" prefHeight="314.0" prefWidth="913.0">
-                    <columns>
-                      <TableColumn prefWidth="72.79998397827148" text="ID" />
-                      <TableColumn prefWidth="83.99996948242188" text="Title" />
-                        <TableColumn prefWidth="95.19999694824219" text="Name" />
-                        <TableColumn prefWidth="97.60003662109375" text="NIC" />
-                        <TableColumn prefWidth="94.4000244140625" text="DOB" />
-                        <TableColumn prefWidth="96.800048828125" text="Address" />
-                        <TableColumn prefWidth="98.4000244140625" text="Contact" />
-                        <TableColumn prefWidth="99.20001220703125" text="Bank Account No" />
-                        <TableColumn prefWidth="92.0" text="Bank Branch" />
-                        <TableColumn prefWidth="78.39998779296877" text="Option" />
-                    </columns>
-                  </TableView>
                   <JFXComboBox fx:id="cmbTitle" focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
-                  <JFXTextField fx:id="txtSearchbar" focusColor="WHITE" layoutX="25.0" layoutY="214.0" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtSearchbar" focusColor="WHITE" layoutX="25.0" layoutY="214.0" onKeyPressed="#btnOnKeyPressed" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -143,11 +129,25 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <DatePicker layoutX="659.0" layoutY="63.0" promptText="YYYY-MM-DD" />
+      <DatePicker fx:id="datePicker" layoutX="659.0" layoutY="63.0" promptText="YYYY-MM-DD" />
       <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="886.0" layoutY="16.0" onMouseClicked="#btnBackToDashboardOnClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
          <image>
             <Image url="@../assets/next%20(1).png" />
          </image>
       </ImageView>
+      <JFXTreeTableView fx:id="tblEmployer" layoutX="23.0" layoutY="278.0" opacity="0.7" prefHeight="333.0" prefWidth="914.0">
+         <columns>
+            <TreeTableColumn fx:id="colId" prefWidth="71.19998550415039" text="ID" />
+            <TreeTableColumn fx:id="colTitle" prefWidth="67.19998168945312" text="Title" />
+            <TreeTableColumn fx:id="colName" prefWidth="101.59999084472656" text="Name" />
+            <TreeTableColumn fx:id="colNic" prefWidth="98.4000244140625" text="NIC" />
+            <TreeTableColumn fx:id="colDob" prefWidth="108.0" text="DOB" />
+            <TreeTableColumn fx:id="colAddress" prefWidth="100.00006103515625" text="Address" />
+            <TreeTableColumn fx:id="colContact" prefWidth="100.79998779296875" text="Contact" />
+            <TreeTableColumn fx:id="colBankAccNo" prefWidth="102.39996337890625" text="Bank Acc No" />
+            <TreeTableColumn fx:id="colBankBranch" prefWidth="82.4000244140625" text="Bank Branch" />
+            <TreeTableColumn fx:id="colOption" prefWidth="86.39990234375" text="Option" />
+         </columns>
+      </JFXTreeTableView>
    </children>
 </AnchorPane>
