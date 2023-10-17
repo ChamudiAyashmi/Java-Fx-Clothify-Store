@@ -137,7 +137,6 @@ public class EmployerFormController implements Initializable {
             }
 
         }catch (SQLException | ClassNotFoundException | NullPointerException exception){
-            exception.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Please Add an Employer !").show();
 
         }

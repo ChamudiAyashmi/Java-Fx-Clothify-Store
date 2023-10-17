@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -127,41 +128,41 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="278.0" layoutY="115.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
-      <AnchorPane layoutX="796.0" layoutY="118.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
-      <AnchorPane layoutX="623.0" layoutY="117.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
-      <AnchorPane layoutX="451.0" layoutY="116.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
-      <Label layoutX="320.0" layoutY="149.0" text="Orders" textFill="WHITE">
+      <AnchorPane layoutX="278.0" layoutY="98.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <AnchorPane layoutX="796.0" layoutY="100.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <AnchorPane layoutX="623.0" layoutY="99.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <AnchorPane layoutX="451.0" layoutY="99.0" opacity="0.51" prefHeight="178.0" prefWidth="146.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+      <Label layoutX="320.0" layoutY="130.0" text="Orders" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="845.0" layoutY="153.0" text="Items" textFill="WHITE">
+      <Label layoutX="845.0" layoutY="132.0" text="Items" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="659.0" layoutY="150.0" text="Suppliers" textFill="WHITE">
+      <Label layoutX="659.0" layoutY="129.0" text="Suppliers" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="479.0" layoutY="149.0" text="Employers" textFill="WHITE">
+      <Label layoutX="479.0" layoutY="130.0" text="Employers" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblOderCount" layoutX="337.0" layoutY="200.0" text="50" textFill="WHITE">
+      <Label fx:id="lblOderCount" layoutX="337.0" layoutY="187.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblItemCount" layoutX="858.0" layoutY="203.0" text="50" textFill="WHITE">
+      <Label fx:id="lblItemCount" layoutX="858.0" layoutY="191.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblSuppliersCount" layoutX="684.0" layoutY="201.0" text="50" textFill="WHITE">
+      <Label fx:id="lblSuppliersCount" layoutX="684.0" layoutY="188.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
@@ -171,7 +172,7 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblEmployersCount" layoutX="515.0" layoutY="202.0" text="50" textFill="WHITE">
+      <Label fx:id="lblEmployersCount" layoutX="515.0" layoutY="186.0" text="50" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
@@ -181,33 +182,6 @@
             <Image url="@../assets/turn-off.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="497.0" layoutY="568.0" prefHeight="30.0" prefWidth="314.0" style="-fx-background-color: WHITE;">
-         <children>
-            <AnchorPane layoutX="7.0" layoutY="3.0" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: RED; -fx-background-radius: 100;" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="582.0" layoutY="571.0" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #FF9900; -fx-background-radius: 100;" />
-      <AnchorPane layoutX="663.0" layoutY="571.0" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #0085FF; -fx-background-radius: 100;" />
-      <AnchorPane layoutX="728.0" layoutY="571.0" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #107100; -fx-background-radius: 100;" />
-      <Label layoutX="531.0" layoutY="569.0" text="Gents">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="608.0" layoutY="569.0" text="Ladies">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="689.0" layoutY="570.0" text="Kids">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="755.0" layoutY="569.0" text="Others">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <PieChart fx:id="pieChart" layoutX="442.0" layoutY="288.0" prefHeight="291.0" prefWidth="331.0" />
    </children>
 </AnchorPane>

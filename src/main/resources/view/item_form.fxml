@@ -131,8 +131,8 @@
                   <TableColumn prefWidth="89.5999755859375" text="Option" />
               </columns>
             </TableView>
-            <JFXComboBox fx:id="cmbSupplierId" focusColor="WHITE" layoutX="172.0" layoutY="95.0" onAction="#cmbSupplierIdOnAction" prefHeight="26.0" prefWidth="108.0" promptText="Select ID" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
-            <JFXComboBox fx:id="cmbSupplierName" focusColor="WHITE" layoutX="288.0" layoutY="95.0" prefHeight="26.0" prefWidth="170.0" promptText="Select Supplier Name" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbSupplierId" focusColor="WHITE" layoutX="172.0" layoutY="95.0" onAction="#cmbSupplierIdOnAction" prefHeight="26.0" prefWidth="108.0" promptText="Select ID" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white; -fx-text-fill: white; -jfx-focus-color: white;" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbSupplierName" focusColor="WHITE" layoutX="288.0" layoutY="95.0" onAction="#cmbNameOnAction" prefHeight="26.0" prefWidth="170.0" promptText="Select Supplier Name" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
             <JFXTextField fx:id="txtBuyingPrice" focusColor="WHITE" layoutX="174.0" layoutY="208.0" prefHeight="31.0" prefWidth="286.0" promptText="Buying Price" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="15.0" />
@@ -154,7 +154,7 @@
                </font>
             </JFXTextField>
             <JFXComboBox fx:id="cmbSize" focusColor="WHITE" layoutX="629.0" layoutY="132.0" prefHeight="26.0" prefWidth="151.0" promptText="Select " style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
-            <JFXButton layoutX="829.0" layoutY="130.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Add">
+            <JFXButton fx:id="btnAdd" layoutX="839.0" layoutY="183.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #FFB800;" text="Add">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -164,6 +164,16 @@
                   <Image url="@../assets/next%20(1).png" />
                </image>
             </ImageView>
+            <JFXTextField fx:id="txtType" disable="true" focusColor="WHITE" layoutX="788.0" layoutY="88.0" prefHeight="31.0" prefWidth="131.0" promptText="Type" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtSize" disable="true" focusColor="WHITE" layoutX="789.0" layoutY="127.0" prefHeight="31.0" prefWidth="131.0" promptText="Size" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
          </children>
       </AnchorPane>
    </children>

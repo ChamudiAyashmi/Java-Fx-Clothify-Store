@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ItemFormController implements Initializable {
+    public JFXTextField txtType;
+    public JFXTextField txtSize;
+    public JFXButton btnAdd;
     private Stage stage;
     public JFXTextField txtItemDescription;
     public JFXTextField txtQty;
@@ -59,21 +62,24 @@ public class ItemFormController implements Initializable {
                     Integer.parseInt(txtQty.getText()),
                     Double.parseDouble(txtSellingPrice.getText()),
                     Double.parseDouble(txtBuyingPrice.getText()),
-                    cmbSupplierId.getValue().toString(),
                     cmbType.getValue().toString(),
-                    cmbSize.getValue().toString()
+                    cmbSize.getValue().toString(),
+                    cmbSupplierId.getValue().toString(),
+                    Double.parseDouble(txtProfit.getText())
+
             );
 
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("INSERT INTO item VALUES (?,?,?,?,?,?,?,?)");
+            PreparedStatement pstm = connection.prepareStatement("INSERT INTO item VALUES (?,?,?,?,?,?,?,?,?)");
             pstm.setObject(1, item.getItemCode());
             pstm.setObject(2, item.getDescription());
             pstm.setObject(3, item.getQty());
             pstm.setObject(4, item.getSellingPrice());
             pstm.setObject(5, item.getBuyingPrice());
-            pstm.setObject(6, item.getSupplierId());
-            pstm.setObject(7, item.getType());
-            pstm.setObject(8, item.getSize());
+            pstm.setObject(6, item.getType());
+            pstm.setObject(7, item.getSize());
+            pstm.setObject(8, item.getSupplierId());
+            pstm.setObject(9, item.getProfit());
 
             if (pstm.executeUpdate() > 0) {
                 new Alert(Alert.AlertType.INFORMATION, "Item Added Successfully !").show();
@@ -118,6 +124,33 @@ public class ItemFormController implements Initializable {
         }
     }
 
+    private void loadProfit() {
+        txtSellingPrice.setOnKeyReleased(ke -> {
+            if (txtSellingPrice.getText()!=null && txtSellingPrice.getText().matches("^-?\\d+(\\.\\d{2}+)?$")) {
+                txtSellingPrice.setOnKeyTyped(actionEvent -> {
+                    if (!txtSellingPrice.getText().isEmpty() && !txtBuyingPrice.getText().isEmpty()) {
+                        String profit = String.format("%8.2f", Double.parseDouble(txtSellingPrice.getText()) - Double.parseDouble(txtBuyingPrice.getText()));
+                        txtProfit.setText(profit);
+                    }
+                });
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Please Enter only 0-9 values..!").show();
+            }
+        });
+        txtBuyingPrice.setOnKeyReleased(ke -> {
+            if (txtBuyingPrice.getText()!=null && txtBuyingPrice.getText().matches("^-?\\d+(\\.\\d{2}+)?$")) {
+                txtBuyingPrice.setOnKeyTyped(actionEvent -> {
+                    if (!txtSellingPrice.getText().isEmpty() && !txtBuyingPrice.getText().isEmpty()) {
+                        String profit = String.format("%8.2f", Double.parseDouble(txtSellingPrice.getText()) - Double.parseDouble(txtBuyingPrice.getText()));
+                        txtProfit.setText(profit);
+                    }
+                });
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Please Enter only 0-9 values..!").show();
+            }
+        });
+    }
+
     public void btnBackToDashboardOnClicked(MouseEvent mouseEvent) throws IOException {
         stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));
@@ -137,8 +170,9 @@ public class ItemFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cmbType.getItems().addAll("Gents", "Ladies","Kids","Others");
-        cmbSize.getItems().addAll("M", "S");
+        cmbSize.getItems().addAll("M", "S","Custom");
         generateId();
+        loadProfit();
         try {
             loadAllSupplierId();
             loadAllSupplierName();
@@ -147,10 +181,62 @@ public class ItemFormController implements Initializable {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        cmbType.setOnAction(event -> {
+            if (cmbType.getValue()!=null){
+                if (!cmbType.getValue().equals("Others") && !cmbType.getValue().toString().isEmpty()){
+                    txtType.setDisable(true);
+                    txtSize.clear();
+                    txtType.setDisable(true);
+                }else if (cmbType.getValue().equals("Others")){
+                    txtType.setDisable(false);
+                }
+            }
+        });
+        cmbSize.setOnAction(event1 -> {
+            if (cmbSize.getValue()!=null) {
+                if (cmbSize.getValue().equals("Custom")) {
+                    txtSize.setDisable(false);
+                } else {
+                    txtSize.clear();
+                    txtSize.setDisable(true);
+                }
+            }else{
+                txtSize.clear();
+                txtSize.setDisable(true);
+            }
+        });
+
+        txtType.setOnKeyReleased(ke -> {
+                if (!txtType.getText().isEmpty()) {
+                    btnAdd.setDisable(false);
+                } else {
+                    btnAdd.setDisable(true);
+                }
+        });
+
+        txtSize.setOnKeyReleased(ke -> {
+            if (!txtSize.getText().isEmpty()) {
+                btnAdd.setDisable(false);
+            } else {
+                btnAdd.setDisable(true);
+            }
+        });
+
+
+
+
+
     }
 
     public void cmbSupplierIdOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         String supId = cmbSupplierId.getSelectionModel().getSelectedItem().toString();
         cmbSupplierName.setValue(SupplierFormController.searchSupplierById(supId).getSupplierName());
     }
+
+    public void cmbNameOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        String supName = cmbSupplierName.getSelectionModel().getSelectedItem().toString();
+        cmbSupplierId.setValue(SupplierFormController.searchSupplierByName(supName).getSupplierId());
+    }
+
 }

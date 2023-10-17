@@ -13,9 +13,12 @@ public class Item {
     private int qty;
     private double sellingPrice;
     private double buyingPrice;
-    private String supplierId;
     private String type;
     private String size;
+    private String supplierId;
+    private double profit;
+
+
 
 
 }

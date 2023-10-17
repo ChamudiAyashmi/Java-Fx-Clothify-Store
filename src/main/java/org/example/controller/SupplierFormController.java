@@ -199,6 +199,11 @@ public class SupplierFormController implements Initializable {
         ResultSet rst=DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * From Supplier where supplierId='"+supId+"'");
         return rst.next() ? new Supplier(supId,rst.getString("title"),rst.getString("supplierName"),rst.getString("contact"),rst.getString("company"),rst.getString("email")):null;
     }
+    public static Supplier searchSupplierByName(String supName) throws SQLException, ClassNotFoundException {
+        ResultSet rst=DBConnection.getInstance().getConnection().createStatement().executeQuery("Select * From Supplier where supplierName='"+supName+"'");
+        return rst.next() ? new Supplier(rst.getString("supplierId"),rst.getString("title"),supName,rst.getString("contact"),rst.getString("company"),rst.getString("email")):null;
+    }
+
 
     public static ArrayList<String> getAllSupplierId() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getInstance().getConnection();
