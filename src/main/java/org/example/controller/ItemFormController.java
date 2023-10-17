@@ -1,8 +1,9 @@
 package org.example.controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,22 +11,41 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.db.DBConnection;
 import org.example.model.Item;
 import org.example.model.Supplier;
+import org.example.tm.ItemTm;
+import org.example.tm.SupplierTm;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ItemFormController implements Initializable {
     public JFXTextField txtType;
     public JFXTextField txtSize;
     public JFXButton btnAdd;
+    public TreeTableColumn colCode;
+    public JFXTreeTableView<ItemTm> tblItem;
+    public TreeTableColumn colDescription;
+    public TreeTableColumn colQty;
+    public TreeTableColumn colSellingPrice;
+    public TreeTableColumn colBuyingPrice;
+    public TreeTableColumn colSize;
+    public TreeTableColumn colType;
+    public TreeTableColumn colProfit;
+    public TreeTableColumn colSupplierId;
+    public TreeTableColumn colOption;
     private Stage stage;
     public JFXTextField txtItemDescription;
     public JFXTextField txtQty;
@@ -34,7 +54,6 @@ public class ItemFormController implements Initializable {
     public JFXTextField txtSellingPrice;
     public JFXTextField txtProfit;
     public JFXButton btnPrintOnAction;
-    public TableView tblItem;
     public JFXComboBox cmbSupplierId;
     public JFXComboBox cmbSupplierName;
     public JFXTextField txtBuyingPrice;
@@ -52,6 +71,86 @@ public class ItemFormController implements Initializable {
 
     public void btnAddStockOnAction(ActionEvent actionEvent) {
 
+    }
+
+    private void loadTable(){
+        ObservableList<ItemTm> itmTmList = FXCollections.observableArrayList();
+        try {
+            List<Item> list = new ArrayList<>();
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("SELECT * FROM item");
+            ResultSet resultSet = pstm.executeQuery();
+
+            while (resultSet.next()){
+                list.add(new Item(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3),
+                        resultSet.getDouble(4),
+                        resultSet.getDouble(5),
+                        resultSet.getString(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8),
+                        resultSet.getDouble(9)
+                ));
+            }
+
+            for (Item item:list) {
+                JFXButton btn = new JFXButton("Delete");
+                btn.setBackground(Background.fill(Color.rgb(250,15,15)));
+
+                btn.setOnAction(actionEvent -> {
+                    try {
+                        PreparedStatement pst = connection.prepareStatement("DELETE FROM item WHERE itemCode=?");
+                        pst.setString(1,item.getSupplierId());
+
+                        if (pst.executeUpdate()>0){
+                            new Alert(Alert.AlertType.INFORMATION,"Supplier Deleted...!").show();
+                            loadTable();
+                        }else {
+                            new Alert(Alert.AlertType.ERROR,"Something went wrong..!").show();
+                        }
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+
+                itmTmList.add(new ItemTm(
+                        item.getItemCode(),
+                        item.getDescription(),
+                        item.getQty(),
+                        item.getSellingPrice(),
+                        item.getBuyingPrice(),
+                        item.getType(),
+                        item.getSize(),
+                        item.getSupplierId(),
+                        item.getProfit(),
+                        btn
+                ));
+            }
+
+            TreeItem<ItemTm> supplierTmTreeItem = new RecursiveTreeItem<>(itmTmList, RecursiveTreeObject::getChildren);
+            tblItem.setRoot(supplierTmTreeItem);
+            tblItem.setShowRoot(false);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setData(TreeItem<ItemTm> value){
+        txtItemCode.setText(value.getValue().getItemCode());
+        txtItemDescription.setText(value.getValue().getDescription());
+        txtQty.setText(String.valueOf(value.getValue().getQty()));
+        txtSellingPrice.setText(String.valueOf(value.getValue().getSellingPrice()));
+        txtBuyingPrice.setText(String.valueOf(value.getValue().getBuyingPrice()));
+        cmbType.setValue(value.getValue().getType());
+        cmbSize.setValue(value.getValue().getSize());
+        cmbSupplierId.setValue(value.getValue().getSupplierId());
+        txtProfit.setText(String.valueOf(value.getValue().getProfit()));
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
@@ -85,7 +184,7 @@ public class ItemFormController implements Initializable {
                 new Alert(Alert.AlertType.INFORMATION, "Item Added Successfully !").show();
 //                clearItems();
                 generateId();
-//                loadTable();
+                loadTable();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Something went wrong !").show();
             }
@@ -173,6 +272,26 @@ public class ItemFormController implements Initializable {
         cmbSize.getItems().addAll("M", "S","Custom");
         generateId();
         loadProfit();
+        loadTable();
+
+        colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("itemCode"));
+        colDescription.setCellValueFactory(new TreeItemPropertyValueFactory<>("description"));
+        colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
+        colSellingPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("sellingPrice"));
+        colBuyingPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("buyingPrice"));
+        colType.setCellValueFactory(new TreeItemPropertyValueFactory<>("type"));
+        colSize.setCellValueFactory(new TreeItemPropertyValueFactory<>("size"));
+        colSupplierId.setCellValueFactory(new TreeItemPropertyValueFactory<>("supplierId"));
+        colProfit.setCellValueFactory(new TreeItemPropertyValueFactory<>("profit"));
+        colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btnDelete"));
+
+        tblItem.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) ->{
+            if (newValue!=null){
+                setData(newValue);
+            }
+        } );
+
+
         try {
             loadAllSupplierId();
             loadAllSupplierName();
