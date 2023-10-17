@@ -1,17 +1,0 @@
-
-t
-java:S1104"XMake lblOderCount a static final constant or non-public and provide accessors if needed.(Åˆ¾8€¾Æ˜³1
-u
-java:S1104"XMake lblItemCount a static final constant or non-public and provide accessors if needed.(œªŒò8€¾Æ˜³1
-z
-java:S1104"]Make lblSuppliersCount a static final constant or non-public and provide accessors if needed.(´Üıü8¾Æ˜³1
-z
-java:S1104"]Make lblEmployersCount a static final constant or non-public and provide accessors if needed.(ªÈ’Û8¾Æ˜³1
-p
-java:S1104"SMake lblTime a static final constant or non-public and provide accessors if needed.(¿°×•8¾Æ˜³1
-u
-java:S1104"SMake lblDate a static final constant or non-public and provide accessors if needed.(…“À„ÿÿÿÿÿ8¾Æ˜³1
-W
-java:S1128";Remove this unused import 'com.jfoenix.controls.JFXButton'.(„•£8êôĞ˜³1
-\
-java:S1128":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8êôĞ˜³1

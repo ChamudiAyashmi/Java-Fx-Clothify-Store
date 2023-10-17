@@ -105,7 +105,7 @@
                      </font>
                   </JFXButton>
                   <JFXComboBox fx:id="cmbTitle" focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
-                  <JFXTextField fx:id="txtSearchbar" focusColor="WHITE" layoutX="25.0" layoutY="214.0" onKeyPressed="#btnOnKeyPressed" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtSearchbar" focusColor="WHITE" layoutX="25.0" layoutY="214.0" prefHeight="31.0" prefWidth="286.0" promptText="Search" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

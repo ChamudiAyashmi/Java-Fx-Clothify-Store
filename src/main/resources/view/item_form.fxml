@@ -131,7 +131,7 @@
                   <TableColumn prefWidth="89.5999755859375" text="Option" />
               </columns>
             </TableView>
-            <JFXComboBox fx:id="cmbSupplierId" focusColor="WHITE" layoutX="172.0" layoutY="95.0" prefHeight="26.0" prefWidth="108.0" promptText="Select ID" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="cmbSupplierId" focusColor="WHITE" layoutX="172.0" layoutY="95.0" onAction="#cmbSupplierIdOnAction" prefHeight="26.0" prefWidth="108.0" promptText="Select ID" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
             <JFXComboBox fx:id="cmbSupplierName" focusColor="WHITE" layoutX="288.0" layoutY="95.0" prefHeight="26.0" prefWidth="170.0" promptText="Select Supplier Name" style="-fx-prompt-text-fill: white; -fx-text-inner-color: white;" unFocusColor="WHITE" />
             <JFXTextField fx:id="txtBuyingPrice" focusColor="WHITE" layoutX="174.0" layoutY="208.0" prefHeight="31.0" prefWidth="286.0" promptText="Buying Price" style="-fx-text-inner-color: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
                <font>

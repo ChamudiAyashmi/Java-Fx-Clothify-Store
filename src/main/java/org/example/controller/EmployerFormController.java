@@ -78,7 +78,7 @@ public class EmployerFormController implements Initializable {
         generateId();
     }
 
-    public static String getLastSupplierId() throws SQLException, ClassNotFoundException {
+    public static String getLastEmployerId() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getInstance().getConnection();
         Statement stm = connection.createStatement();
         ResultSet rst = stm.executeQuery("SELECT empId FROM Employer ORDER BY empId DESC LIMIT 1");
@@ -86,11 +86,11 @@ public class EmployerFormController implements Initializable {
     }
     private void generateId() {
         try {
-            String lastSupplierId = getLastSupplierId();
-            if (lastSupplierId != null && lastSupplierId.matches("EMP-\\d{4}")) {
-                int numericPart = Integer.parseInt(lastSupplierId.substring(4)) + 1;
-                String newSupplierId = String.format("EMP-%04d", numericPart);
-                txtEmployerId.setText(newSupplierId);
+            String lastEmployerId = getLastEmployerId();
+            if (lastEmployerId != null && lastEmployerId.matches("EMP-\\d{4}")) {
+                int numericPart = Integer.parseInt(lastEmployerId.substring(4)) + 1;
+                String newEmployerId = String.format("EMP-%04d", numericPart);
+                txtEmployerId.setText(newEmployerId);
             } else {
                 txtEmployerId.setText("EMP-0001");
             }
@@ -100,7 +100,7 @@ public class EmployerFormController implements Initializable {
         }
     }
 
-    public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    public void btnSaveOnAction(ActionEvent actionEvent) {
         try{
 
             Employer employer = new Employer(
@@ -269,7 +269,4 @@ public class EmployerFormController implements Initializable {
         txtBankBranch.setText(value.getValue().getBankBranch());
     }
 
-    public void btnOnKeyPressed(KeyEvent keyEvent) {
-
-    }
 }
