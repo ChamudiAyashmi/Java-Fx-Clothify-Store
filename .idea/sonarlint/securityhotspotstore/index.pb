@@ -17,8 +17,6 @@ g
 0src/main/java/org/example/model/SalesReturn.java,6\a\6aeb4373bc6cbf789a5e36533e28514a47e44aae
 \
 ,src/main/java/org/example/model/Payment.java,9\7\97090e901c16287f37d05c4ee49cec8d2a89473c
-]
--src/main/java/org/example/model/Supplies.java,5\5\55210b3bc6c3abfdefdbbe89f9b0046054b69109
 t
 Dsrc/main/java/org/example/controller/SalesReturnsFormController.java,9\5\95fce7f8e6a5ae5e384098cfec71d5d105d57a33
 t
@@ -39,3 +37,5 @@ m
 =src/main/java/org/example/controller/LoginFormController.java,d\4\d4b13899cdbc7c256bce11f96391f4b610fc0c2e
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+m
+=src/main/java/org/example/controller/DashboardController.java,a\5\a523907361fc3ac1e2464754f8bf4b484015a64d

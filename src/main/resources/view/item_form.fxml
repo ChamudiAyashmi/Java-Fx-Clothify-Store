@@ -162,7 +162,7 @@
             </JFXTextField>
          </children>
       </AnchorPane>
-      <JFXTreeTableView fx:id="tblItem" layoutX="26.0" layoutY="320.0" prefHeight="290.0" prefWidth="910.0">
+      <JFXTreeTableView fx:id="tblItem" layoutX="26.0" layoutY="320.0" opacity="0.7" prefHeight="290.0" prefWidth="910.0">
          <columns>
             <TreeTableColumn fx:id="colCode" prefWidth="83.20000839233398" text="Code" />
             <TreeTableColumn fx:id="colDescription" prefWidth="95.19998168945312" text="Description" />

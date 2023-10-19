@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.example.Util.CrudUtil;
 import org.example.db.DBConnection;
 import org.example.model.Item;
 import org.example.model.Supplier;
@@ -195,6 +196,25 @@ public class ItemFormController implements Initializable {
 
         }
 
+    }
+
+    public static List<Item> getItemsBySupplierId(String id) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM item WHERE supplierId=?", id);
+        List<Item> list = new ArrayList<>();
+        while (resultSet.next()) {
+            list.add(new Item(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getDouble(4),
+                    resultSet.getDouble(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7),
+                    resultSet.getString(8),
+                    resultSet.getDouble(9)
+            ));
+        }
+        return list;
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {

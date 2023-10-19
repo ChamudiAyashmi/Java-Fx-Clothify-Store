@@ -22,9 +22,11 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.db.DBConnection;
 import org.example.model.Employer;
+import org.example.model.Item;
 import org.example.model.Supplier;
 import org.example.tm.EmployerTm;
 import org.example.tm.SupplierTm;
+import org.example.tm.SuppliesTm;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,15 +46,18 @@ public class SupplierFormController implements Initializable {
     public TreeTableColumn colContact;
     public TreeTableColumn colOption;
     public TreeTableColumn colEmail;
+    public JFXTreeTableView<SuppliesTm> tblSupplies;
+    public TreeTableColumn colItemCode;
+    public TreeTableColumn colDescription;
+    public TreeTableColumn colQty;
     private Stage stage;
-
     public JFXTextField txtSupplierName;
     public JFXTextField txtSupplierContact;
     public JFXTextField txtSupplierId;
     public JFXComboBox cmbTitle;
     public JFXTextField txtCompany;
     public JFXTextField txtSearchbar;
-    public TableView tblItem;
+//    public TableView tblItem;
 
     public void btnClearOnAction(ActionEvent actionEvent) {
         clearItems();
@@ -111,8 +116,6 @@ public class SupplierFormController implements Initializable {
                         supplier.getEmail(),
                         btn
                 ));
-
-
             }
 
             TreeItem<SupplierTm> supplierTmTreeItem = new RecursiveTreeItem<>(supTmList, RecursiveTreeObject::getChildren);
@@ -243,6 +246,10 @@ public class SupplierFormController implements Initializable {
         colEmail.setCellValueFactory(new TreeItemPropertyValueFactory<>("email"));
         colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btnDelete"));
 
+        colItemCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("itemCode"));
+        colDescription.setCellValueFactory(new TreeItemPropertyValueFactory<>("description"));
+        colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
+
         generateId();
         loadTable();
 
@@ -278,6 +285,27 @@ public class SupplierFormController implements Initializable {
         txtSupplierContact.setText(value.getValue().getContact());
         txtCompany.setText(value.getValue().getCompany());
         txtSupplierEmail.setText(value.getValue().getEmail());
+
+        setSupplies(value.getValue().getSupplierId());
+
+    }
+
+    private void setSupplies(String supplierId) {
+        ObservableList<SuppliesTm> list=FXCollections.observableArrayList();
+        try {
+            for (Item item :ItemFormController.getItemsBySupplierId(supplierId) ) {
+                list.add(new SuppliesTm(
+                                item.getItemCode(), item.getDescription(),item.getQty()
+                        )
+
+                );
+            }
+            TreeItem<SuppliesTm> treeItem=new RecursiveTreeItem<>(list,RecursiveTreeObject::getChildren);
+            tblSupplies.setRoot(treeItem);
+            tblSupplies.setShowRoot(false);
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }
