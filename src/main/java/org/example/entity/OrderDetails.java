@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.entity;
 
 import lombok.*;
 
@@ -7,11 +7,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class SalesReturnDetails {
-    private String returnId;
+public class OrderDetails {
     private String itemCode;
+    private String orderId;
     private int qty;
-    private double discount;
     private double unitPrice;
-    private double amount;
+    private double totalProfit;
+    private double discount;
+
 }

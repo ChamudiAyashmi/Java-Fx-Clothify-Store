@@ -14,13 +14,12 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.db.DBConnection;
-import org.example.model.Employer;
+import org.example.entity.Employer;
 import org.example.tm.EmployerTm;
 
 import java.io.IOException;

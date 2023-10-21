@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
@@ -20,10 +19,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.Util.CrudUtil;
 import org.example.db.DBConnection;
-import org.example.model.Item;
-import org.example.model.Supplier;
+import org.example.entity.Item;
 import org.example.tm.ItemTm;
-import org.example.tm.SupplierTm;
 
 import java.io.IOException;
 import java.net.URL;
@@ -67,7 +64,7 @@ public class ItemFormController implements Initializable {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        clearItems();
     }
 
     public void btnAddStockOnAction(ActionEvent actionEvent) {
@@ -154,6 +151,18 @@ public class ItemFormController implements Initializable {
         txtProfit.setText(String.valueOf(value.getValue().getProfit()));
     }
 
+    public void clearItems(){
+        txtItemDescription.clear();
+        txtQty.clear();
+        txtSellingPrice.clear();
+        txtBuyingPrice.clear();
+        txtType.clear();
+        txtSize.clear();
+//        cmbSupplierId.setValue(null);
+//        cmbSupplierName.setValue(null);
+        txtProfit.clear();
+    }
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
         try{
             Item item = new Item(
@@ -183,7 +192,7 @@ public class ItemFormController implements Initializable {
 
             if (pstm.executeUpdate() > 0) {
                 new Alert(Alert.AlertType.INFORMATION, "Item Added Successfully !").show();
-//                clearItems();
+                clearItems();
                 generateId();
                 loadTable();
             } else {
@@ -361,11 +370,6 @@ public class ItemFormController implements Initializable {
                 btnAdd.setDisable(true);
             }
         });
-
-
-
-
-
     }
 
     public void cmbSupplierIdOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
